@@ -1,0 +1,9 @@
+# Turn rewrite engine on
+Options +FollowSymlinks
+RewriteEngine on
+
+# map all urls
+RewriteRule ^product/list/([^/]+)$             ApiController.php?action=all&format=$1 [nc,qsa]
+RewriteRule ^product/list/([0-9]+)/([^/]+)$    ApiController.php?action=single&id=$1&format=$2 [nc,qsa]
+RewriteRule ^product/add/([^/]+)/([^/]+)$      ApiController.php?action=add&mbname=$1&format=$2 [nc,qsa]
+RewriteRule ^product/delete/([^/]+)/([^/]+)$   ApiController.php?action=del&id=$1&format=$2 [nc,qsa]
